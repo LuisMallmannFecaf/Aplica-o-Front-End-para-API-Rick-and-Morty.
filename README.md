@@ -34,4 +34,4 @@ Veja o site funcionando no GitHub Pages:
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/SEU_USUARIO/rick-and-morty-cards.git
+https://github.com/LuisMallmannFecaf/Aplica-o-Front-End-para-API-Rick-and-Morty..git
