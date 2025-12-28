@@ -1,0 +1,158 @@
+/* ===================== Reset e box-sizing ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== Paleta de cores Rick and Morty ===================== */
+:root {
+    --cor-primaria: #00ff9f; /* verde neon portal */
+    --cor-secundaria: #6b00ff; /* roxo sci-fi */
+    --cor-card: #1a1a2e; /* azul escuro espacial */
+    --cor-texto: #ffffff;
+    --cor-hover-card: #00ff9f33;
+    --cor-status-alive: #00ff00;
+    --cor-status-dead: #ff0000;
+    --cor-status-unknown: #ffff00;
+}
+
+/* ===================== Corpo ===================== */
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(135deg, #0b0c10, #1f1f2e);
+    color: var(--cor-texto);
+    min-height: 100vh;
+}
+
+/* ===================== Grid de cards ===================== */
+#cardPersonagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===================== Card do personagem ===================== */
+.card-character {
+    background: var(--cor-card);
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--cor-texto);
+    box-shadow: 0 0 10px #00ff9f33;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-character:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px #00ff9f, 0 0 40px #6b00ff55;
+}
+
+/* ===================== Imagem ===================== */
+.card_image {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.card_image img {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid var(--cor-primaria);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card_image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ff9f, 0 0 40px #6b00ff55;
+}
+
+/* ===================== Título ===================== */
+.name-character {
+    font-size: 1.3rem;
+    color: var(--cor-primaria);
+    text-shadow: 0 0 6px #00ff9f;
+}
+
+/* ===================== Informações do personagem ===================== */
+.info-character {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0.5rem 0;
+    text-align: left;
+    width: 100%;
+}
+
+.info-character .status {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.info-character span {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Status colorido */
+.status.alive { color: var(--cor-status-alive); }
+.status.dead { color: var(--cor-status-dead); }
+.status.unknown { color: var(--cor-status-unknown); }
+
+/* ===================== Paginação ===================== */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.btn-paginacao {
+    background: linear-gradient(135deg, #00ff9f, #6b00ff);
+    color: #000;
+    border: none;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-paginacao:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ff9f, 0 0 25px #6b00ff;
+}
+
+.btn-paginacao:disabled {
+    background-color: #6f7174;
+    cursor: not-allowed;
+    opacity: 0.3;
+    transform: none;
+}
+
+.pagina-info {
+    color: var(--cor-texto);
+    font-weight: bold;
+    font-size: 0.95rem;
+    align-self: center;
+}
+
+
+
+/* ===================== Responsividade ===================== */
+@media (max-width: 480px) {
+    #cardProdutos { padding: 1rem; gap: 1rem; }
+    .caixa_titulo { font-size: 1rem; }
+    .info-personagem span { font-size: 0.85rem; }
+}
